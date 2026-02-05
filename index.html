@@ -11,8 +11,8 @@
         input { padding: 12px; width: 80%; border: 2px solid #ffb3c1; border-radius: 12px; margin: 15px 0; font-size: 18px; text-align: center; outline: none; }
         button { background: var(--p); color: white; border: none; padding: 12px 30px; border-radius: 12px; font-size: 18px; cursor: pointer; width: 100%; box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3); }
         #messageContent { display: none; }
-        .msg-text { text-align: justify; line-height: 1.8; font-size: 16px; max-height: 450px; overflow-y: auto; padding: 15px; background: #fff9fa; border-radius: 15px; color: #4a0e0e; }
-        img { width: 100%; border-radius: 15px; margin: 15px 0; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .msg-text { text-align: justify; line-height: 1.8; font-size: 16px; max-height: 400px; overflow-y: auto; padding: 15px; background: #fff9fa; border-radius: 15px; color: #4a0e0e; }
+        img { width: 100%; border-radius: 15px; margin: 15px 0; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: block; }
         .hearts-bg { position: fixed; top: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
         .heart { position: absolute; color: var(--p); animation: up 5s infinite linear; bottom: -20px; }
         @keyframes up { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
@@ -23,20 +23,20 @@
 <div class="hearts-bg" id="hb"></div>
 
 <div class="box" id="login">
-    <h2 style="color:var(--p)">🔐 رسالة سرية لكِ 🔐</h2>
-    <p>ادخلي تاريخ اليوم المميز (17/8/2023)</p>
+    <h2 style="color:var(--p)">🔐 رسالة خاصة 🔐</h2>
+    <p>ادخلي التاريخ المميز (17/8/2023)</p>
     <input type="text" id="pass" placeholder="يوم/شهر/سنة">
     <button onclick="openMe()">افتحي قلبي ❤️</button>
 </div>
 
 <div class="box" id="messageContent">
     <h2 style="color:var(--p)">حبيبتي الغالية ❤️</h2>
-    <p style="font-size: 13px;">🎵 اضغطي تشغيل للأغنية</p>
+    <p style="font-size: 13px;">🎵 الأغنية ستعمل تلقائياً (أو اضغطي تشغيل)</p>
     <audio id="aud" controls style="width:100%">
-        <source src="https://f.top4top.io/m_2604v0v0v1.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
 
-    <img src="./1000585805.jpg" alt="حياتي">
+    <img src="https://raw.githubusercontent.com/hamok9539-blip/Habobty/main/1000585805.jpg" alt="صورة حبنا">
 
     <div class="msg-text">
         حبيبتي الغالية، يا أجمل نعمة ربنا أنعم بيها عليّ، يا أغلى حد في حياتي، يمكن الكلمات تعجز توصف إحساسي ناحيتك، لكن قلبي مش ساكت، قلبي دايمًا بيكلمني عنك، بيقولي إنك الأمان، وإنك السعادة، وإنك الاختيار الصح اللي من أول مرة ما ندمتش عليه ولا ثانية واحدة.
@@ -71,16 +71,15 @@
 
     function openMe() {
         var val = document.getElementById("pass").value.trim();
-        var allowed = ["17/8/2023", "١٧/٨/٢٠٢٣", "17-8-2023", "17/08/2023"];
+        var allowed = ["17/8/2023", "١٧/٨/٢٠٢٣", "17-8-2023"];
         if (allowed.includes(val)) {
             document.getElementById("login").style.display = "none";
             document.getElementById("messageContent").style.display = "block";
             document.getElementById("aud").play();
         } else {
-            alert("التاريخ خطأ.. حاولي تاني يا روحي ❤️");
+            alert("التاريخ خطأ.. جربي 17/8/2023 ❤️");
         }
     }
 </script>
 </body>
 </html>
-
