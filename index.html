@@ -8,33 +8,40 @@
         :root { --p: #ff4d6d; }
         body { background: #fff0f3; margin: 0; font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; overflow-x: hidden; }
         .box { width: 90%; max-width: 500px; background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); text-align: center; z-index: 10; border: 2px solid white; }
-        input { padding: 12px; width: 80%; border: 2px solid #ffb3c1; border-radius: 12px; margin: 15px 0; font-size: 18px; text-align: center; }
+        input { padding: 12px; width: 80%; border: 2px solid #ffb3c1; border-radius: 12px; margin: 15px 0; font-size: 18px; text-align: center; outline: none; }
         button { background: var(--p); color: white; border: none; padding: 12px 30px; border-radius: 12px; font-size: 18px; cursor: pointer; width: 100%; }
         #messageContent { display: none; }
         .msg-text { text-align: justify; line-height: 1.8; font-size: 16px; max-height: 400px; overflow-y: auto; padding: 15px; background: #fff9fa; border-radius: 15px; }
-        img { width: 100%; border-radius: 15px; margin: 15px 0; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        img { width: 100%; border-radius: 15px; margin: 15px 0; border: 3px solid white; box-shadow: 0 5px 15px rgba(0,0,0,0.1); display: block; }
         .hearts-bg { position: fixed; top: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
         .heart { position: absolute; color: var(--p); animation: up 5s infinite linear; bottom: -20px; }
         @keyframes up { to { transform: translateY(-110vh) rotate(360deg); opacity: 0; } }
     </style>
 </head>
 <body>
+
 <div class="hearts-bg" id="hb"></div>
+
 <div class="box" id="login">
     <h2 style="color:var(--p)">🔐 رسالة حب 🔐</h2>
     <p>ادخلي التاريخ المميز (17/8/2023)</p>
     <input type="text" id="pass" placeholder="يوم/شهر/سنة">
     <button onclick="openMe()">افتحي قلبي ❤️</button>
 </div>
+
 <div class="box" id="messageContent">
     <h2 style="color:var(--p)">حبيبتي الغالية ❤️</h2>
     <audio id="aud" controls style="width:100%"><source src="song.mp3" type="audio/mpeg"></audio>
-    <img src="Polish_20251229_180323745.jpg">
+    
+    <img src="Polish_20251229_180323745.jpg" alt="حياتي">
+
     <div class="msg-text">
-        حبيبتي الغالية، يا أجمل نعمة ربنا أنعم بيها عليّ، يا أغلى حد في حياتي.. (انسخ هنا الرسالة كاملة التي تريدها)
+        حبيبتي الغالية، يا أجمل نعمة ربنا أنعم بيها عليّ، يا أغلى حد في حياتي، يمكن الكلمات تعجز توصف إحساسي ناحيتك، لكن قلبي مش ساكت، قلبي دايمًا بيكلمني عنك، بيقولي إنك الأمان، وإنك السعادة، وإنك الاختيار الصح اللي من أول مرة ما ندمتش عليه ولا ثانية واحدة...
+        (باقي رسالتك هنا)
     </div>
-    <p style="color:var(--p); font-weight: bold;">بـحبـك لآخر العمر ❤️</p>
+    <p style="color:var(--p); font-weight: bold; margin-top: 15px;">بـحبـك لآخر يوم في عمري ❤️</p>
 </div>
+
 <script>
     function createH() {
         const b = document.getElementById('hb');
@@ -48,6 +55,7 @@
         }, 500);
     }
     createH();
+
     function openMe() {
         var val = document.getElementById("pass").value.trim();
         if (val === "17/8/2023" || val === "١٧/٨/٢٠٢٣") {
